@@ -18,9 +18,9 @@ def load_data():
 @st.cache_data
 def load_embeddings(model_option):
     if model_option == "cointegrated/rubert-tiny2":
-        embd_path = "/Users/marinakochetova/Downloads/embedding_brt.pth"
+        embd_path = "embedding_brt.pth"
     elif model_option == "msmarco-distilbert-base-v4":
-        embd_path = "/Users/marinakochetova/Downloads/weighted_embeddings.pth"
+        embd_path = "weighted_embeddings.pth"
 
     embeddings_tensor = torch.load(embd_path)
     embeddings = embeddings_tensor.numpy()
