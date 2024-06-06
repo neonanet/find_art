@@ -12,7 +12,7 @@ st.markdown('<div style="text-align: center; font-size: 16px;"></div>', unsafe_a
 
 @st.cache_data
 def load_data():
-    return pd.read_csv("/Users/marinakochetova/Downloads/df_full_n.csv")
+    return pd.read_csv("/df_full_n.csv")
 
 
 @st.cache_data
