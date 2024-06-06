@@ -39,11 +39,11 @@ def initialize_faiss_index(embeddings):
 def find_similar_articles(index, embeddings, df, art_ind, num_similar):
     query_embedding = np.array([embeddings[art_ind]], dtype='float32')
     faiss.normalize_L2(query_embedding)
-    k = num_similar * 2  # Увеличиваем количество запрашиваемых ближайших соседей
+    k = num_similar * 2  # удваиваем
     D, I = index.search(query_embedding, k)
     query_id = df.loc[art_ind, 'id']
 
-    # Исключение исходной статьи из результатов
+    # фильтруем
     seen_ids = set()
     filtered_indices = []
     filtered_distances = []
